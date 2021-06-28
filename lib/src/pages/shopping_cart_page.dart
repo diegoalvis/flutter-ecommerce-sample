@@ -9,7 +9,46 @@ class ShoppingCartPage extends StatelessWidget {
   const ShoppingCartPage({Key key}) : super(key: key);
 
   Widget _cartItems() {
-    return Column(children: AppData.cartList.map((x) => _item(x)).toList());
+    return Column(
+        children: AppData.cartList.map((x) {
+      final replacement = (x.id % 2 == 0) ? x : null;
+      return _product(x, replacement: replacement);
+    }).toList());
+  }
+
+  Widget _product(Product model, {Product replacement}) {
+    final isReplacement = replacement != null;
+    return Column(
+      children: [
+        Opacity(opacity: isReplacement ? 0.5 : 1, child: _item(model)),
+        isReplacement ? _item(replacement) : SizedBox(),
+        isReplacement
+            ? Row(children: [
+                Spacer(flex: 2),
+                _optionButton(),
+                Spacer(flex: 1),
+                _optionButton(),
+                Spacer(flex: 2),
+              ])
+            : SizedBox()
+      ],
+    );
+  }
+
+  Widget _optionButton() {
+    return FlatButton(
+        onPressed: () {},
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        color: LightColor.blue,
+        child: Container(
+          alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(vertical: 4),
+          child: TitleText(
+            text: 'Accept',
+            color: LightColor.background,
+            fontWeight: FontWeight.w400,
+          ),
+        ));
   }
 
   Widget _item(Product model) {
@@ -107,7 +146,7 @@ class ShoppingCartPage extends StatelessWidget {
     return FlatButton(
         onPressed: () {},
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        color: LightColor.orange,
+        color: LightColor.blue,
         child: Container(
           alignment: Alignment.center,
           padding: EdgeInsets.symmetric(vertical: 12),

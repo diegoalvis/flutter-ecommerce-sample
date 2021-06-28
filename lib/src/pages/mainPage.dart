@@ -28,6 +28,11 @@ class _MainPageState extends State<MainPage> {
             quarterTurns: 4,
             child: _icon(Icons.sort, color: Colors.black54),
           ),
+          TitleText(
+            text: 'Falcon',
+            fontSize: 30,
+            fontWeight: FontWeight.w700,
+          ),
           ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(13)),
             child: Container(
@@ -89,7 +94,7 @@ class _MainPageState extends State<MainPage> {
                   padding: EdgeInsets.all(10),
                   child: Icon(
                       Icons.delete_outline,
-                      color: LightColor.orange,
+                      color: LightColor.blue,
                     ),
                 ).ripple(() {}, borderRadius: BorderRadius.all(Radius.circular(13)))
                 : SizedBox()

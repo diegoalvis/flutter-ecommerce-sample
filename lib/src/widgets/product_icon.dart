@@ -26,7 +26,7 @@ class ProductIcon extends StatelessWidget {
                     ? LightColor.background
                     : Colors.transparent,
                 border: Border.all(
-                  color: model.isSelected ? LightColor.orange : LightColor.grey,
+                  color: model.isSelected ? LightColor.blue : LightColor.grey,
                   width: model.isSelected ? 2 : 1,
                 ),
                 boxShadow: <BoxShadow>[

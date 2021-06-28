@@ -75,7 +75,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar>
               duration: Duration(milliseconds: 300),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                  color: isEnable ? LightColor.orange : Colors.white,
+                  color: isEnable ? LightColor.blue : Colors.white,
                   boxShadow: <BoxShadow>[
                     BoxShadow(
                       color: isEnable ? Color(0xfffeece2) : Colors.white,
@@ -162,9 +162,9 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar>
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                _icon(Icons.home, _selectedIndex == 0, 0),
+                _icon(Icons.home_outlined, _selectedIndex == 0, 0),
                 _icon(Icons.search, _selectedIndex == 1, 1),
-                _icon(Icons.card_travel, _selectedIndex == 2, 2),
+                _icon(Icons.shopping_cart_outlined, _selectedIndex == 2, 2),
                 _icon(Icons.favorite_border, _selectedIndex == 3, 3),
               ],
             ),

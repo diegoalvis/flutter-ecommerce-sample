@@ -36,14 +36,14 @@ class AppData {
         image: 'assets/small_tilt_shoe_2.png',
         category: "Trending Now"),
     Product(
-        id: 1,
+        id: 3,
         name: 'Nike Air Max 92607',
         price: 220.00,
         isliked: false,
         image: 'assets/small_tilt_shoe_3.png',
         category: "Trending Now"),
     Product(
-        id: 2,
+        id: 4,
         name: 'Nike Air Max 200',
         price: 240.00,
         isSelected: true,

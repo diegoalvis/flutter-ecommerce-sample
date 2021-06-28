@@ -82,7 +82,7 @@ class ShoppingCartPage extends StatelessWidget {
                 Positioned(
                   left: -20,
                   bottom: -20,
-                  child: Image.asset(model.image),
+                  child: Image.network(model.image),
                 )
               ],
             ),

@@ -70,13 +70,13 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisSpacing: 20),
         padding: EdgeInsets.only(left: 20),
         scrollDirection: Axis.horizontal,
-        children: AppData.productList
+        children: AppData.cartList
             .map(
               (product) => ProductCard(
                 product: product,
                 onSelected: (model) {
                   setState(() {
-                    AppData.productList.forEach((item) {
+                    AppData.cartList.forEach((item) {
                       item.isSelected = false;
                     });
                     model.isSelected = true;

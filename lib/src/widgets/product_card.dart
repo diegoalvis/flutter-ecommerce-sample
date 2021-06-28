@@ -63,7 +63,7 @@ class ProductCard extends StatelessWidget {
                         radius: 40,
                         backgroundColor: LightColor.orange.withAlpha(40),
                       ),
-                      Image.asset(product.image)
+                      Image.network(product.image)
                     ],
                   ),
                 ),

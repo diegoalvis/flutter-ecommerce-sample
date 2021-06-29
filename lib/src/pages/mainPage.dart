@@ -28,24 +28,25 @@ class _MainPageState extends State<MainPage> {
             quarterTurns: 4,
             child: _icon(Icons.sort, color: Colors.black54),
           ),
-          TitleText(
+          AppBarTitle(
             text: 'Falcon',
+            subTitle: " by Pelican Team",
             fontSize: 30,
             fontWeight: FontWeight.w700,
           ),
           ClipRRect(
-            borderRadius: BorderRadius.all(Radius.circular(13)),
+            borderRadius: BorderRadius.all(Radius.circular(40)),
             child: Container(
-              decoration: BoxDecoration(
-                color: Theme.of(context).backgroundColor,
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                      color: Color(0xfff8f8f8),
-                      blurRadius: 10,
-                      spreadRadius: 10),
-                ],
-              ),
-              child: Image.asset("assets/user.png"),
+              // decoration: BoxDecoration(
+              //   color: Theme.of(context).backgroundColor,
+              //   // boxShadow: <BoxShadow>[
+              //   //   BoxShadow(
+              //   //       color: Color(0xfff8f8f8),
+              //   //       blurRadius: 10,
+              //   //       spreadRadius: 10),
+              //   // ],
+              // ),
+              child: Image.asset("assets/pelican.png", scale: 15),
             ),
           ).ripple(() {}, borderRadius: BorderRadius.all(Radius.circular(13)))
         ],

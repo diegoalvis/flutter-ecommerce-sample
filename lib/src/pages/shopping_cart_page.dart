@@ -8,83 +8,27 @@ import 'package:flutter_ecommerce_app/src/widgets/title_text.dart';
 class ShoppingCartPage extends StatelessWidget {
   const ShoppingCartPage({Key key}) : super(key: key);
 
-  Widget _cartItems() {
-    return Column(
-        children: AppData.cartList.map((x) {
-      final replacement = (x.id % 2 == 0) ? x : null;
-      return _product(x, replacement: replacement);
-    }).toList());
-  }
-
-  Widget _product(Product model, {Product replacement}) {
-    final isReplacement = replacement != null;
-    return Column(
-      children: [
-        Opacity(opacity: isReplacement ? 0.5 : 1, child: _item(model)),
-        isReplacement ? _item(replacement) : SizedBox(),
-        isReplacement
-            ? Row(children: [
-                Spacer(flex: 2),
-                _optionButton(),
-                Spacer(flex: 1),
-                _optionButton(),
-                Spacer(flex: 2),
-              ])
-            : SizedBox()
-      ],
-    );
-  }
-
-  Widget _optionButton() {
-    return FlatButton(
-        onPressed: () {},
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        color: LightColor.blue,
-        child: Container(
-          alignment: Alignment.center,
-          padding: EdgeInsets.symmetric(vertical: 4),
-          child: TitleText(
-            text: 'Accept',
-            color: LightColor.background,
-            fontWeight: FontWeight.w400,
-          ),
-        ));
-  }
-
   Widget _item(Product model) {
     return Container(
       height: 80,
       child: Row(
         children: <Widget>[
           AspectRatio(
-            aspectRatio: 1.2,
-            child: Stack(
-              children: <Widget>[
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Container(
-                    height: 70,
-                    width: 70,
-                    child: Stack(
-                      children: <Widget>[
-                        Align(
-                          alignment: Alignment.bottomLeft,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: LightColor.lightGrey,
-                                borderRadius: BorderRadius.circular(10)),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Positioned(
-                  left: -20,
-                  bottom: -20,
-                  child: Image.network(model.image),
-                )
-              ],
+            aspectRatio: 1,
+            child: Container(
+              height: 70,
+              width: 70,
+              child: Image.network(
+                model.imageUrl,
+                loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent loadingProgress) {
+                  return Container(
+                    decoration: BoxDecoration(
+                        color: loadingProgress == null ? Colors.white : LightColor.lightGrey,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Image.network(model.imageUrl),
+                  );
+                },
+              ),
             ),
           ),
           Expanded(
@@ -112,10 +56,11 @@ class ShoppingCartPage extends StatelessWidget {
                     height: 35,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                        color: LightColor.lightGrey.withAlpha(150),
-                        borderRadius: BorderRadius.circular(10)),
+                      color: LightColor.lightGrey.withAlpha(150),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     child: TitleText(
-                      text: 'x${model.id}',
+                      text: 'x${model.quantity}',
                       fontSize: 12,
                     ),
                   )))
@@ -144,7 +89,9 @@ class ShoppingCartPage extends StatelessWidget {
 
   Widget _submitButton(BuildContext context) {
     return FlatButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed('/order');
+        },
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         color: LightColor.blue,
         child: Container(
@@ -162,28 +109,38 @@ class ShoppingCartPage extends StatelessWidget {
   double getPrice() {
     double price = 0;
     AppData.cartList.forEach((x) {
-      price += x.price * x.id;
+      price += x.price * x.quantity;
     });
     return price;
   }
 
   @override
   Widget build(BuildContext context) {
+    final products = AppData.cartList;
     return Container(
       padding: AppTheme.padding,
-      child: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            _cartItems(),
-            Divider(
-              thickness: 1,
-              height: 70,
-            ),
-            _price(),
-            SizedBox(height: 30),
-            _submitButton(context),
-          ],
-        ),
+      child: Column(
+        children: <Widget>[
+          Expanded(
+            flex: 1,
+            child: ListView.builder(
+              itemCount: products.length,
+                itemBuilder: (context, index) {
+              return Container(
+                margin: const EdgeInsets.only(bottom: 8.0),
+                child: _item(products[index]),
+              );
+            }),
+          ),
+          Divider(
+            thickness: 1,
+            height: 70,
+          ),
+          _price(),
+          SizedBox(height: 30),
+          _submitButton(context),
+          SizedBox(height: 30)
+        ],
       ),
     );
   }

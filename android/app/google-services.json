@@ -1,0 +1,119 @@
+{
+  "project_info": {
+    "project_number": "649005492625",
+    "firebase_url": "https://fir-test-d4487.firebaseio.com",
+    "project_id": "fir-test-d4487",
+    "storage_bucket": "fir-test-d4487.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649005492625:android:7707f674d7461769a49230",
+        "android_client_info": {
+          "package_name": "com.deliveryhero.shopper.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "649005492625-be5aq91khljrs72kpqr2ftb9mmnq6k8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3fdAjN9w3JuPgDsJATbOWiSH4UE1MW-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "649005492625-be5aq91khljrs72kpqr2ftb9mmnq6k8i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "649005492625-k086ef0tac75echcap1emuick7tsjq4c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.lacoro.consumer"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649005492625:android:97e4620036edd325a49230",
+        "android_client_info": {
+          "package_name": "com.diegoalvis.auth_flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "649005492625-be5aq91khljrs72kpqr2ftb9mmnq6k8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3fdAjN9w3JuPgDsJATbOWiSH4UE1MW-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "649005492625-be5aq91khljrs72kpqr2ftb9mmnq6k8i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "649005492625-k086ef0tac75echcap1emuick7tsjq4c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.lacoro.consumer"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649005492625:android:131e716cb0a6ed00a49230",
+        "android_client_info": {
+          "package_name": "com.thealphamerc.flutter_ecommerce_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "649005492625-be5aq91khljrs72kpqr2ftb9mmnq6k8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3fdAjN9w3JuPgDsJATbOWiSH4UE1MW-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "649005492625-be5aq91khljrs72kpqr2ftb9mmnq6k8i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "649005492625-k086ef0tac75echcap1emuick7tsjq4c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.lacoro.consumer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

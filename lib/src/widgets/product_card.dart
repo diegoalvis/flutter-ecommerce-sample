@@ -43,9 +43,8 @@ class ProductCard extends StatelessWidget {
               top: 0,
               child: IconButton(
                 icon: Icon(
-                  product.isliked ? Icons.favorite : Icons.favorite_border,
-                  color:
-                      product.isliked ? LightColor.red : LightColor.iconColor,
+                  Icons.favorite_border,
+                  color: LightColor.iconColor,
                 ),
                 onPressed: () {},
               ),
@@ -63,7 +62,7 @@ class ProductCard extends StatelessWidget {
                         radius: 40,
                         backgroundColor: LightColor.blue.withAlpha(40),
                       ),
-                      Image.network(product.image)
+                      Image.network(product.imageUrl)
                     ],
                   ),
                 ),
